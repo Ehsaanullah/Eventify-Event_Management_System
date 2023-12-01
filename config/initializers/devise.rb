@@ -15,7 +15,6 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'd07b21f4808b0f9ad2d9c1c3e1a2f5136b0df9741851b8aa9c4cd5a17dde4a742ced17ef2ea1dc0c735f1f0598633e5b36d6da60235e7d344530849d4bfaa3d1'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -125,9 +124,6 @@ Devise.setup do |config|
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 12
-
-  # Set up a pepper to generate the hashed password.
-  # config.pepper = '4449288a609c48c9cbad9deb9ad19a21ce830a00ce89b566e2729d4dc4ae979f8bbd344cdb21757bcd83b8fa72792781c3cd7f4c19811c13187be096cccecb40'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -315,7 +311,6 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
  
   # config.default_url_options = { host: 'localhost', port: 3000 }
-  # config.omniauth :google_oauth2, ENV['243215285456-q6o8ptkfp23m0tr5pgion4k34k744p17.apps.googleusercontent.com'], ENV['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'],, scope: 'email,profile', provider_ignores_state: true
   config.skip_session_storage = [:http_auth]
 
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET']
