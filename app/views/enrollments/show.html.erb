@@ -1,0 +1,6 @@
+<br>
+<div class="container">
+  <%= turbo_frame_tag @enrollment do %>
+    <%= button_to "Destroy this enrollment", @enrollments, method: :delete, data: { turbo_confirm: "Are you sure?", turbo_frame: "enrollments" },class: "btn btn-dark";  %>
+  <% end %>
+</div>

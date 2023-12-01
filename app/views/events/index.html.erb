@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag 'card_styles' %>
+<!-- Search button to toggle the dropdown -->
+<button id="toggle-search" class="btn btn-light glyphicon glyphicon-search card-container container" style="margin-left: 100px; color:#fb6b5b; font-weight: bold;">Filter Events</button>
+
+<!-- Dropdown container initially hidden -->
+<div id="search-dropdown" class="dropdown" style="display: none;">
+  <div class="dropdown-content container">
+    <%= search_form_for @q, remote: true do |f| %>
+      <!-- helper calling -->
+      <%= event_search(f)%>
+    <% end %>
+  </div>
+</div>
+
+<!-- Events thing  -->
+<div class="card container"  >
+  <h1 class="container" style="font-family: Audiowide; text-align: center;">Active Events</h1>  
+  <div id="events" class="pagination" style="display: flex;">
+    <% @events.each do |event| %>
+
+      <div class="card col-12 col-sm-6 col-md-4 col-lg-3 card-container" style="width: 18rem; display: flex; ">
+        <!-- helper calling -->
+        <%= display_event_image(event) %>      
+        <% max_length = 150 %>
+
+        <div class="card-body ">
+          <!-- helper calling -->
+          <%= display_card_details(event,max_length) %>
+          <br>
+        </div>
+        <%= link_to "Show event details", event, class: "btn btn-primary" %>
+      </div>
+      <br>    
+    <% end %>
+    <br><br>
+  </div>
+</div>
+<br><br>
+<%= link_to "New Event", new_event_path ,class:"btn btn-primary " ,style: "margin-left: 8%;" %>
+<br><br>
+<%= pagination_helper(@event) %>

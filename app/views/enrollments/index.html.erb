@@ -1,0 +1,36 @@
+<div class="card container" style="margin-top: 3%;" >
+<h1 class="container text-center" style="font-family: Audiowide; text-align: center;">Your Enrollments</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th>Event</th>
+      <th>Expiry Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% counter = 0 %>
+    <% @enrollments.each do |enrollment| %>
+    <!-- <%= render enrollment %> -->
+      <tr>
+        
+        <td><%= counter += 1%></td>
+        <td><%= enrollment.event.title %></td>
+        <td><%= enrollment.event.expiry_date %></td>
+        <td>
+          <%= link_to 'View', enrollment.event %> |
+          <!-- <%= link_to 'Edit', edit_event_enrollment_path(enrollment.event, enrollment) %> -->
+          <%= link_to 'Delete', enrollment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+</div>
+<br>
+<%= pagination_helper(@enrollments) %>
+
+

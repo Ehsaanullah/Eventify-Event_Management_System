@@ -1,0 +1,11 @@
+<div class="container" >
+  <h1 style="font-family: Audiowide; text-align: center;">Editing Event</h1>
+
+  <%= render "form", event: @event %>
+
+  <br>
+  <div>
+    <%= link_to "Show this event", @event ,class: "btn btn-primary" %> |
+    <%= link_to "Back to events", events_path ,class: "btn btn-primary"%>
+  </div>
+</div>

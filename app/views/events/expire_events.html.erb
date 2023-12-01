@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag 'card_styles' %>
+<div class="card container" style="margin-top: 3%;">
+	<h1 class="container " style="font-family: Audiowide; text-align: center;">Expired Events</h1>
+	<div id="reviews" class="pagination" style="  display: flex;">
+	  <% @exp.each do |event| %>
+	    <div class="card col-12 col-sm-6 col-md-4 col-lg-3 card-container " style="width: 18rem;" style="display: flex;">
+			<%= display_event_image(event) %>
+			<% max_length = 150 %>
+			<div class="card-body" >
+				<%= display_card_details(event, max_length) %>
+			    <br>
+			    <%= display_event_reviews(event,@expired_event_reviews) %>				
+				<br>
+			</div>
+			<%= link_to "Show event details", event, class: "btn btn-primary container", style: "position:absolute; bottom: 0;"%>
+	    </div>
+	  <% end %>
+	</div>
+</div>
+<br><br>
+
+<%= pagination_helper(@exp)  %>

@@ -1,0 +1,9 @@
+<%= form_with model: @enrollment do |form| %>
+
+  <%= form.hidden_field :event_id, value: @event.id %>
+  <%= form.hidden_field :user_id, value: @current_user.id %>
+
+  <h1 style="font-family: Audiowide;">Enrollment for this Event</h1>
+  <br>
+  <%= form.submit "Register Event",class: "btn btn-primary"; %>
+<% end %>

@@ -1,0 +1,21 @@
+//New.Review
+
+
+<%= form_with model: @review do |form| %>
+
+  <!-- hidden fields for event_id and user_id -->
+  <%= form.hidden_field :event_id, value: @event.id %>
+  <%= form.hidden_field :user_id, value: @current_user.id %>
+
+  
+  <div class="container">
+  <h1>Review Event</h1>
+  <br>
+  <!-- <%= form.label :Add_Review %> -->
+  <%= form.text_field :feedback ,placeholder: "Enter your review here", style: "display: flex;",class: "form-control form-control-lg"%>
+  <%= form.number_field :rating, placeholder: "Enter Rating 1-5", style: "display: flex;", class: "form-control form-control-lg" %>
+  <br>
+
+  <%= form.submit "Add Review to this Event" ,class: "btn btn-primary"%>
+<% end %>
+</div>

@@ -1,0 +1,37 @@
+<%= form_with(model: event) do |form| %>
+  <% if event&.errors&.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- form helper -->
+  <div >
+    <%= event_form(form, :title, nil, 'Enter Event Title', :text) %>
+    <%= event_form(form, :description, nil, 'Enter Event Description', :text) %>
+    <%= event_form(form, :location, nil, 'Enter Event Location', :text) %>
+    <%= event_form(form, :available_slots, nil, 'Enter Available Slots', :number) %>
+    <%= event_form(form, :category, nil, 'Enter Event Category', :text) %>
+    <%= event_form(form, :date, 'Date', 'Enter Event Date', :date) %>
+    <%= event_form(form, :expiry_date, 'Expiry Date', nil, :date) %>
+    <%= event_form(form, :time, 'Time', nil, :time) %>
+    <%= event_form(form, :image, 'Add Image', nil, :file) %>
+    <br>
+
+    <div>
+      <% if @event.id.present? %>
+        <%= form.submit "Update Event", class: "btn btn-dark" %>
+      <% else %>
+        <%= form.submit "Add Event", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+

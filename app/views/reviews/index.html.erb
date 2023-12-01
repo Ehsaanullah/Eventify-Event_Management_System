@@ -1,0 +1,37 @@
+<div class="card container" style="margin-top: 3%;">
+<h1 class="container text-center" style="font-family: Audiowide; text-align: center;">Review Events</h1>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th>Event</th>
+      <th>Expiry Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% counter = 0 %>
+    <% @reviews.each do |review| %>
+    <!-- <% render review %> -->
+      <tr>
+        
+        <td><%= counter += 1%></td>
+        <td><%= review.event.title %></td>
+        <td><%= review.event.expiry_date %></td>
+        <td>
+          <!-- Adding Flag for reviewing event -->
+          <% review_flag = 0 %>
+          <%= link_to 'Review', review.event,review_flag: 1 %>
+          
+        </td>
+      </tr>
+    <% end %>
+
+    
+  </tbody>
+</table>
+</div>
+<br>
+<%= pagination_helper(@reviews) %>
+

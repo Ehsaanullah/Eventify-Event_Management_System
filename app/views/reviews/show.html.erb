@@ -1,0 +1,10 @@
+<%= render @reviews %>
+<h1>Show.Review</h1>
+<div>
+  <!-- <%= link_to 'Attend Event', new_registration_path(event_id: @event.id) %> -->
+  <%= link_to 'Register for this Event', new_event_registration_path(@event) %> |
+  <%= link_to "Edit this event", edit_event_path(@event) %> |
+  <%= link_to "Back to events", events_path %>
+
+  <%= button_to "Destroy this event", @event, data: {turbo_method: :delete} %>
+</div>
