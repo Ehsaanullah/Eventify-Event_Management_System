@@ -1,9 +1,3 @@
-# Rails.application.config.middleware.use OmniAuth::Builder do
-#   provider :developer if Rails.env.development?
-#   provider :google_oauth2, ENV['243215285456-q6o8ptkfp23m0tr5pgion4k34k744p17.apps.googleusercontent.com'], ENV['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']
-# end
-# OmniAuth.config.allowed_request_methods = %i[get]
-# OmniAuth::AuthenticityTokenProtection.default_options(key: "csrf.token", authenticity_param: "_csrf")
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   # provider :developer unless Rails.env.production?
