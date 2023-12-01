@@ -3,20 +3,20 @@ default: &default
   encoding: unicode
   pool: 5
   host: localhost
-  username: mynewuser
-  password: engintech
+  username: your_user_name
+  password: our_password
 
 development:
   <<: *default
-  database: eventify_development
+  database: your_project_development
 
 test:
   <<: *default
-  database: eventify_test
+  database: your_project_test
 
 production:
   <<: *default
-  database: eventify_production
+  database: your_project_production
 
 
 
