@@ -102,7 +102,7 @@ Rails.application.configure do
     port: 587,
     domain: 'localhost:3000', # Use the domain and port for your local development
     user_name: 'apikey',
-    password: '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',
+    password: 'your_key',
     authentication: :plain,
     enable_starttls_auto: true
   }
