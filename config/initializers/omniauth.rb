@@ -30,9 +30,6 @@ OmniAuth.config.before_request_phase = lambda { |env|
 }
 
 
-# GOOGLE_CLIENT_ID="243215285456-q6o8ptkfp23m0tr5pgion4k34k744p17.apps.googleusercontent.com"
-# GOOGLE_CLIENT_SECRET="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"
-
 # Rails.application.config.middleware.use OmniAuth::Builder do
 #   provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
 # end
