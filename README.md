@@ -2,7 +2,25 @@
 
 Eventify is a robust event management system built on the Ruby on Rails framework. It allows users to seamlessly create and manage events, enroll in active events, and provide valuable feedback through reviews. The integration of Twilio's mailing API ensures efficient communication with users by sending notifications for event creation and feedback submission.
 
-# Key Features:
+## Key Features:
+
+* Event Management
+  * Event Creation
+  * Event Enrollment
+  * Feedback and Reviews
+* Integration
+  * Twilio Mailing API
+* Testing
+  * Rspec
+* Background Jobs
+  * Sidekiq
+* Gems
+  * Devise
+  * will_paginate
+  * Ransack
+  * Redis
+  * Sendgrid
+
 1- Devise: User Authentication.
 2- Event Creation: Users can effortlessly create events with detailed information.
 3- Event Enrollment: Attendees can easily enroll in any active events.
