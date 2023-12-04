@@ -10,7 +10,7 @@ Eventify is a robust event management system built on the Ruby on Rails framewor
   * Event Enrollment: Attendees can easily enroll in any active events.
   * Feedback and Reviews: After an event concludes, attendees can share their experiences through reviews and feedback.
 * Integration
-  * wilio Mailing API Integration: Automated email notifications for event creation and feedback submission using Twilio's mailing API.
+  * Twilio Mailing API Integration: Automated email notifications for event creation and feedback submission using Twilio's mailing API.
 * Testing
   * Rspec Testing: Comprehensive testing using Rspec to ensure code reliability and functionality.
 * Background Jobs
